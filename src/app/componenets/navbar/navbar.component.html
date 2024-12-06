@@ -57,49 +57,92 @@
     </button>
   </div>
 
-  <span (click)="showMobileView()" class="md:hidden cursor-pointer">
-    @if(mobileView) {
-    <i class="fa-solid fa-bars text-blue-700"></i>
-    } @else {
-    <i class="fa-solid fa-xmark text-blue-700"></i>
-
-    }
+  <span class="md:hidden cursor-pointer">
+    <i
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight"
+      class="fa-solid fa-bars text-[24px] text-blue-900 cursor-pointer"
+    ></i>
   </span>
 </div>
 
-<div [hidden]="mobileView" class="fixed bg-black inset-0 z-10 mt-16">
-  <ul class="md:flex flex-col items-center md:gap-5">
-    <li
-      routerLink="/"
-      class="text-white hover:bg-blue-900 px-6 py-4 border-b border-blue-800 cursor-pointer font-rfont"
-    >
-      Home
-    </li>
-    <li
-      routerLink="/data"
-      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
-    >
-      Data
-    </li>
-    <li
-      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
-    >
-      Contact
-    </li>
-    <li
-      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
-    >
-      Services
-    </li>
-  </ul>
+<!-- Mobile view Toggle Bootstrap  -->
 
-  <button
-    routerLink="/register"
-    class="md:flex mt-4 mx-4 items-center gap-2 border px-6 py-2 text-white rounded-md bg-blue-800 hover:text-white"
-  >
-    <span class="mx-2">Register</span>
-    <i class="fa-solid fa-arrow-right"></i>
-  </button>
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="border-b w-full pb-3">
+      <h1
+        id="offcanvas-header"
+        class="md:block text-blue-950 font-rfont font-medium text-lg md:text-[18px] tracking-wider"
+      >
+        Remiges Technology
+      </h1>
+    </div>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="flex flex-col gap-3 w-max-lg">
+      <!-- <div class="border-b w-full pb-3">
+        <h1
+          id="offcanvas-header"
+          class=" md:block text-blue-950 font-rfont font-medium text-lg md:text-[18px] tracking-wider"
+        >
+          Remiges Technology
+        </h1>
+      </div> -->
 
-  <div class="border-b mt-8 shadow-lg"></div>
+      <a
+        routerLink="/"
+        href=""
+        class="w-full hover:bg-blue-900 text-black hover:text-white border-b py-2 px-2"
+        data-bs-dismiss="offcanvas"
+        routerLink="/"
+        >Home</a
+      >
+      <a
+        href=""
+        routerLink="/data"
+        class="w-full hover:bg-blue-900 text-black hover:text-white border-b py-2 px-2"
+        data-bs-dismiss="offcanvas"
+        routerLink="/data"
+        >Data</a
+      >
+      <a
+        href=""
+        class="w-full hover:bg-blue-900 text-black hover:text-white border-b py-2 px-2"
+        data-bs-dismiss="offcanvas"
+        routerLink="/data"
+        >Contact</a
+      >
+      <a
+        href=""
+        class="w-full hover:bg-blue-900 text-black hover:text-white border-b py-2 px-2"
+        data-bs-dismiss="offcanvas"
+        routerLink="/data"
+        >About</a
+      >
+
+      <div class="">
+        <button
+          data-bs-dismiss="offcanvas"
+          routerLink="/register"
+          class="md:flex mt-4 mx-4 items-center gap-2 border px-6 py-2 text-white rounded-md bg-blue-800 hover:text-white"
+        >
+          <span class="mx-2">Register</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
