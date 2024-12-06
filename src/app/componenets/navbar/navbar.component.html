@@ -1,0 +1,105 @@
+<div class="bg-white shadow-md flex justify-between items-center p-3">
+  <div class="flex gap-7 md:flex md:gap-3 md:items-center">
+    <img
+      src="{{ orgLogo }}"
+      alt="org_logo"
+      class="w-32 object-cover md:max-h-40 md:max-w-40"
+    />
+    <div class="border-r hidden md:block border-blue-600 h-7"></div>
+    <h1
+      class="hidden md:block text-blue-950 font-rfont font-medium text-lg md:text-[18px] tracking-wider"
+    >
+      {{ orgName }}
+    </h1>
+  </div>
+
+  <ul class="hidden md:flex items-center md:gap-5">
+    <li
+      routerLink="/"
+      class="hover:bg-blue-900 px-6 py-1 border-b border-blue-800 cursor-pointer font-rfont font-medium text-gray-900 hover:text-white hover:border-pink-500"
+    >
+      Home
+    </li>
+
+    <li
+      routerLink="/data"
+      class="hover:bg-blue-900 px-6 py-1 border-b border-blue-800 cursor-pointer font-rfont font-medium text-gray-900 hover:text-white hover:border-pink-500"
+    >
+      Data
+    </li>
+    <li
+      class="hover:bg-blue-900 px-6 py-1 border-b border-blue-800 cursor-pointer font-rfont font-medium text-gray-900 hover:text-white hover:border-pink-500"
+    >
+      Contact
+    </li>
+    <li
+      class="hover:bg-blue-900 px-6 py-1 border-b border-blue-800 cursor-pointer font-rfont font-medium text-gray-900 hover:text-white hover:border-pink-500"
+    >
+      Services
+    </li>
+  </ul>
+
+  <!-- Button Image -->
+  <div class="hidden md:flex md:items-center gap-5">
+    <div class="border rounded-full shadow-md">
+      <img
+        src="{{ userImage }}"
+        alt="user_image"
+        class="w-16 h-16 object-cover rounded-full"
+      />
+    </div>
+    <button
+      routerLink="register"
+      class="hidden md:flex items-center gap-2 border px-6 py-2 bg-blue-800 text-white rounded-md hover:text-blue-950"
+    >
+      <span>Register</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <span (click)="showMobileView()" class="md:hidden cursor-pointer">
+    @if(mobileView) {
+    <i class="fa-solid fa-bars text-blue-700"></i>
+    } @else {
+    <i class="fa-solid fa-xmark text-blue-700"></i>
+
+    }
+  </span>
+</div>
+
+<div [hidden]="mobileView" class="fixed bg-black inset-0 z-10 mt-16">
+  <ul class="md:flex flex-col items-center md:gap-5">
+    <li
+      routerLink="/"
+      class="text-white hover:bg-blue-900 px-6 py-4 border-b border-blue-800 cursor-pointer font-rfont"
+    >
+      Home
+    </li>
+    <li
+      routerLink="/data"
+      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
+    >
+      Data
+    </li>
+    <li
+      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
+    >
+      Contact
+    </li>
+    <li
+      class="text-white hover:bg-blue-900 px-6 py-3 border-b border-blue-800 cursor-pointer font-rfont"
+    >
+      Services
+    </li>
+  </ul>
+
+  <button
+    routerLink="/register"
+    class="md:flex mt-4 mx-4 items-center gap-2 border px-6 py-2 text-white rounded-md bg-blue-800 hover:text-white"
+  >
+    <span class="mx-2">Register</span>
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+  <div class="border-b mt-8 shadow-lg"></div>
+</div>

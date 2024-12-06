@@ -1,0 +1,37 @@
+<footer class="bg-blue-950 text-gray-300 py-8">
+  <div class="container mx-auto px-4">
+    <!-- Footer Top -->
+    <div class="flex md:flex md:flex-wrap md:justify-between md:items-center">
+      <!-- Company Logo and Name -->
+      <div class="w-full md:w-1/3 mb-6 md:mb-0 flex items-center">
+        <img src="{{ logo }}" alt="Company Logo" class="h-12 mr-3" />
+        <h2 class="text-2xl font-semibold text-white"></h2>
+      </div>
+
+      <!-- Version Info -->
+      <div class="w-full md:w-1/3 mb-6 md:mb-0 text-center">
+        <p>
+          Version: <span class="font-semibold text-white"> {{ version }}</span>
+        </p>
+        <p>
+          Release Date:
+          <span class="font-semibold text-white"> {{ release_date }}</span>
+        </p>
+      </div>
+
+      <!-- Current Date -->
+      <div class="w-full md:w-1/3 text-right">
+        <p>
+          Today's Date:
+          <span class="font-semibold text-white">
+            {{ todayDate }}
+          </span>
+        </p>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="mt-8 text-center text-sm border-t border-gray-700 pt-4">
+      &copy; 2024 {{ cName }}All rights reserved.
+    </div>
+  </div>
+</footer>

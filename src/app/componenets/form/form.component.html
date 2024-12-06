@@ -1,0 +1,117 @@
+<div class="min-h-xl py-5 flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-lg md:max-w-lg bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-center text-blue-800">
+      User Registration Form
+    </h2>
+
+    <!-- Name Field -->
+    <div class="mb-1 mt-2 flex flex-col gap-1 min-w-md">
+      <label for="name" class="block text-gray-700 font-medium mb-2"
+        >Name</label
+      >
+      <input
+        [(ngModel)]="name"
+        (ngModelChange)="validateName()"
+        type="text"
+        id="name"
+        name="name"
+        [class.border-red-500]="!isNameValid"
+        [class.focus:ring-red-500]="!isNameValid"
+        [class.focus:ring-green-500]="isNameValid"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+        placeholder="Enter your name"
+      />
+      <span *ngIf="!isNameValid" class="text-red-500 text-sm w-full">
+        Minimum length greater than 1 | Special Character | Digit Not Allowed
+      </span>
+    </div>
+
+    <!-- Phone Field -->
+    <div class="mb-1 mt-2 flex flex-col gap-1 min-w-md">
+      <label for="phone" class="block text-gray-700 font-medium mb-2"
+        >Phone</label
+      >
+      <input
+        [(ngModel)]="phone"
+        (ngModelChange)="validatePhone()"
+        type="tel"
+        id="phone"
+        name="phone"
+        [class.border-red-500]="!isPhoneValid"
+        [class.focus:ring-red-500]="!isPhoneValid"
+        [class.focus:ring-green-500]="isPhoneValid"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+        placeholder="Enter your phone number"
+      />
+      <span *ngIf="!isPhoneValid" class="text-red-500 text-sm w-full">
+        Only Numbers Allowed (10 digits)
+      </span>
+    </div>
+
+    <!-- Username Field -->
+    <div class="mb-1 mt-2 flex flex-col gap-1 min-w-md">
+      <label for="username" class="block text-gray-700 font-medium mb-2"
+        >Username</label
+      >
+      <input
+        [(ngModel)]="username"
+        (ngModelChange)="validateUsername()"
+        type="text"
+        id="username"
+        name="username"
+        [class.border-red-500]="!isUsernameValid"
+        [class.focus:ring-red-500]="!isUsernameValid"
+        [class.focus:ring-green-500]="isUsernameValid"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+        placeholder="Choose a username"
+      />
+      <span *ngIf="!isUsernameValid" class="text-red-500 text-sm w-full">
+        Min Length Greater than 3 | Special Character Not Allowed
+      </span>
+    </div>
+
+    <!-- Password Field -->
+    <div class=" flex flex-col gap-1 min-w-md">
+      <label for="password" class="block text-gray-700 font-medium mb-2"
+        >Password</label
+      >
+      <input
+        [(ngModel)]="password"
+        (ngModelChange)="validatePassword()"
+        type="password"
+        id="password"
+        name="password"
+        [class.border-red-500]="!isPasswordValid"
+        [class.focus:ring-red-500]="!isPasswordValid"
+        [class.focus:ring-green-500]="isPasswordValid"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+        placeholder="Create a password"
+      />
+      <span *ngIf="!isPasswordValid" class="text-red-500 text-sm w-full">
+        Password must be at least 6 characters long and include uppercase,
+        lowercase, digit, and special character
+      </span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex gap-2">
+      <div class="mt-6 flex gap-2">
+        <button
+          (click)="saveToLocalStorage()"
+          type="button"
+          class="w-1/2 bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+        >
+          Submit
+        </button>
+
+        <button
+          (click)="resetForm()"
+          type="button"
+          class="w-1/2 bg-red-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
